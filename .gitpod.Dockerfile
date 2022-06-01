@@ -15,7 +15,7 @@ RUN pacman --noconfirm -Sy \
 	arquivolta-new-user-template nodejs npm python-poetry fzf ripgrep
 
 RUN echo '%wheel ALL=(ALL:ALL) ALL' > /etc/sudoers.d/00-enable-wheel && \
-	echo '' >> /etc/sudoers.d/00-enable-wheel \
+	echo '' >> /etc/sudoers.d/00-enable-wheel && \
 	chmod 644 /etc/sudoers.d/00-enable-wheel
 
 RUN useradd -m -G wheel -s /bin/zsh 'gitpod'
