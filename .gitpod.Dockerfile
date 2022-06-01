@@ -31,3 +31,5 @@ USER root
 ENV USER root
 
 RUN cd /tmp/yay && pacman --noconfirm -U $(ls *.zst)
+
+CMD /bin/zsh -l
