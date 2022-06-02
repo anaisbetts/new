@@ -18,7 +18,8 @@ RUN echo '%wheel ALL=(ALL:ALL) ALL' > /etc/sudoers.d/00-enable-wheel && \
 	echo '' >> /etc/sudoers.d/00-enable-wheel && \
 	chmod 644 /etc/sudoers.d/00-enable-wheel
 
-RUN useradd -m -G wheel -s /bin/zsh 'gitpod'
+RUN groupadd -g 33333 gitpod
+RUN useradd -m -g gitpod -G wheel -u 33333 -s /bin/zsh 'gitpod'
 
 USER gitpod
 ENV USER gitpod
